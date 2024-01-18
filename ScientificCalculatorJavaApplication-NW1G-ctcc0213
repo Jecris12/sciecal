@@ -21,11 +21,6 @@ public class NavigatingTheFeaturesofScientificCalculatorsJavaApplication {
             System.out.print("Enter the operator: ");
             String operator = scanner.next();
 
-            if (operator.equalsIgnoreCase("e")) {
-                System.out.println("Exiting the calculator. Thank you for using it.!");
-                break;
-            }
-
             switch (operator.toLowerCase()) {
                 case "s":
                     result = Math.sqrt(num1);
