@@ -93,7 +93,3 @@ public class ScientificCalculatorJavaApplication {
         scanner.close();
     }
 }
-
-        scanner.close();
-    }
-}
