@@ -1,20 +1,19 @@
 import java.util.Scanner;
 
-public class NavigatingtheFeaturesofScientificCalculatorsJavaApplication {
+public class ScientificCalculatorJavaApplication {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Simple Calculator");
-        System.out.println("Available operations: +, -, *, /, sqrt, sin");
-        System.out.println("To exit, enter 'e' as the operator.");
+        do {
+            System.out.println("Casio");
+            System.out.println("Available operations: +, -, *, /, sqrt, sin, cos, tan, log, exp");
 
-        while (true) {
             double num1, num2, result;
 
             System.out.print("Enter the first number: ");
             if (!scanner.hasNextDouble()) {
                 System.out.println("Error: Invalid input. Please enter a valid number.");
-                scanner.nextLine(); 
+                scanner.nextLine();
                 continue;
             }
             num1 = scanner.nextDouble();
@@ -34,6 +33,18 @@ public class NavigatingtheFeaturesofScientificCalculatorsJavaApplication {
                 case "sin":
                     result = Math.sin(Math.toRadians(num1));
                     break;
+                case "cos":
+                    result = Math.cos(Math.toRadians(num1));
+                    break;
+                case "tan":
+                    result = Math.tan(Math.toRadians(num1));
+                    break;
+                case "log":
+                    result = Math.log10(num1);
+                    break;
+                case "exp":
+                    result = Math.exp(num1);
+                    break;
                 case "+":
                 case "-":
                 case "*":
@@ -41,7 +52,7 @@ public class NavigatingtheFeaturesofScientificCalculatorsJavaApplication {
                     System.out.print("Enter the second number: ");
                     if (!scanner.hasNextDouble()) {
                         System.out.println("Error: Invalid input. Please enter a valid number.");
-                        scanner.nextLine(); 
+                        scanner.nextLine();
                         continue;
                     }
                     num2 = scanner.nextDouble();
@@ -65,7 +76,7 @@ public class NavigatingtheFeaturesofScientificCalculatorsJavaApplication {
                             }
                             break;
                         default:
-                            result = 0; 
+                            result = 0;
                     }
                     break;
                 default:
@@ -74,7 +85,14 @@ public class NavigatingtheFeaturesofScientificCalculatorsJavaApplication {
             }
 
             System.out.println("Result: " + result);
-        }
+
+            System.out.print("Do you want to continue? (yes/no): ");
+        } while (scanner.next().equalsIgnoreCase("yes"));
+
+        System.out.println("Exiting the calculator. Thank you for using it!");
+        scanner.close();
+    }
+}
 
         scanner.close();
     }
